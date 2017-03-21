@@ -1,0 +1,42 @@
+﻿{
+  "name": "silken-avatar",
+  "description": "silken avatar",
+  "version": "0.0.1",
+  "homepage": "",
+  "author": {
+    "name": "Makarov Valentin",
+    "email": "valentin@makva.org"
+  },
+  "private": true,
+  "dependencies": {
+    "async": "1.5",
+    "coffee-script": "1.10",
+    "debug": "2.2",
+    "fs-extra": "0.8",
+    "iced-coffee-script": "108.0"
+  },
+  "devDependencies": {
+    "coffeelint": "1.15",
+    "mocha": "3.1",
+    "node-dev": "2.2",
+    "expect.js": "0.3"
+  },
+  "scripts": {
+    "rmdebug": "find ./node_modules -type d -name 'debug' ! -path './node_modules/debug' -print0 | xargs -0 rm -rf",
+    "rmips": "rm -rf ./node_modules/viper ./node_modules/ips-config ./node_modules/ips-const ./node_modules/ips-schemas",
+    "lint": "find . -type f -name '*.coffee' ! -path './node_modules/*' ! -path './run/*' -print0 | xargs -0 ./node_modules/.bin/coffeelint",
+    "mocha": "mocha --compilers coffee:iced-coffee-script/register -S -b -R tap",
+    "test": "npm run lint && /bin/true",
+    "dev": "npm run rmips && npm run rmdebug",
+    "postinstall": "npm run rmdebug"
+  },
+  "engines": {
+    "node": "^4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rusintes/silken-avatar"
+  },
+  "_id": "silken-avatar@0.0.1",
+  "_from": "silken-avatar@"
+}
