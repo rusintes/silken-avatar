@@ -26,7 +26,7 @@
     "rmips": "rm -rf ./node_modules/viper ./node_modules/ips-config ./node_modules/ips-const ./node_modules/ips-schemas",
     "lint": "find . -type f -name '*.coffee' ! -path './node_modules/*' ! -path './run/*' -print0 | xargs -0 ./node_modules/.bin/coffeelint",
     "mocha": "mocha --compilers coffee:iced-coffee-script/register -S -b -R tap",
-    "test": "npm run lint && /bin/true",
+    "test": "npm run lint && npm run mocha",
     "dev": "npm run rmips && npm run rmdebug",
     "postinstall": "npm run rmdebug"
   },
